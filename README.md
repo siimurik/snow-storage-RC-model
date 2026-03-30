@@ -1,4 +1,4 @@
-# snowsim
+# Snow Storage RC Model
 
 A physics-based thermal model for seasonal snow storage piles, implemented in
 Python. Simulates the temperature evolution, melting, refreezing, and runoff of

@@ -175,4 +175,4 @@ USE_PERCOLATION         = True   # bucket-method percolation between layers
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE.md)

@@ -15,8 +15,7 @@ melt losses. **snowsim** models this system using a 3-layer RC
 temperature and liquid water content that evolve in response to atmospheric and
 ground boundary conditions.
 
-Results are benchmarked against two empirical melt-rate models (Skogsberg 2005;
-Skogsberg & Nordell 2001), a transient 1D implicit finite-difference solver
+Results are benchmarked against two empirical melt-rate models (Skogsberg 2005), a transient 1D implicit finite-difference solver
 through the insulation layer and optionally against SNOWPACK simulation output.
 
 ---

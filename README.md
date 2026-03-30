@@ -1,7 +1,7 @@
 # Snow Storage RC Model
 
 A physics-based thermal model for seasonal snow storage piles, implemented in
-Python. Simulates the temperature evolution, melting, refreezing, and runoff of
+Python. Simulates the temperature evolution, melting, refreezing and runoff of
 a multi-layer snowpack driven by real hourly meteorological data.
 
 ---
@@ -17,7 +17,7 @@ ground boundary conditions.
 
 Results are benchmarked against two empirical melt-rate models (Skogsberg 2005;
 Skogsberg & Nordell 2001), a transient 1D implicit finite-difference solver
-through the insulation layer, and optionally against SNOWPACK simulation output.
+through the insulation layer and optionally against SNOWPACK simulation output.
 
 ---
 

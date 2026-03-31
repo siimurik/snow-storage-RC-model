@@ -1378,14 +1378,14 @@ def main():
     dif2 = emp2_cs_trim[-1] - snowsim_cs[-1]
     dif_t = tdma_cs_trim[-1] - snowsim_cs[-1]
 
-    print(f"\nSnowsim bias vs Emp1: {dif1:+.1f} mm  ({100*bias1:+.1f}%)")
-    print(f"Snowsim bias vs Emp2: {dif2:+.1f} mm  ({100*bias2:+.1f}%)")
-    print(f"Snowsim bias vs TDMA: {dif_t:+.1f} mm  ({100*bias_t:+.1f}%)")
+    print(f"\nSnowsim RC vs Emp1: {dif1:+.1f} mm  ({100*bias1:+.1f}%)")
+    print(f"Snowsim RC vs Emp2: {dif2:+.1f} mm  ({100*bias2:+.1f}%)")
+    print(f"Snowsim RC vs 1D Heat Eq.: {dif_t:+.1f} mm  ({100*bias_t:+.1f}%)")
     if sp_cs is not None:
         sp_cs_trim = sp_cs[:n_full_hours]
         bias_sp = 1.0 - sp_cs_trim[-1]/snowsim_cs[-1]
         dif_sp = sp_cs_trim[-1] - snowsim_cs[-1]
-        print(f"Snowsim bias vs SNOWPACK: {dif_sp:+.1f} mm  ({100*bias_sp:+.1f}%)")
+        print(f"Snowsim RC vs SNOWPACK: {dif_sp:+.1f} mm  ({100*bias_sp:+.1f}%)")
     else:
         bias_sp = None
 
@@ -1395,7 +1395,7 @@ def main():
     rmse_t = np.sqrt(np.mean((melt_mm_hourly - tdma_h_trim)**2))
     print(f"\nHourly RMSE vs Emp1:  {rmse1:.3f} mm/h")
     print(f"Hourly RMSE vs Emp2:  {rmse2:.3f} mm/h")
-    print(f"Hourly RMSE vs TDMA:  {rmse_t:.3f} mm/h")
+    print(f"Hourly RMSE vs 1D Heat Eq.:  {rmse_t:.3f} mm/h")
 
     # ------------------------------------------------------------------
     #  Figures - saved individually to ./figures/

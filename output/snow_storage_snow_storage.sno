@@ -1,0 +1,40 @@
+SMET 1.1 ASCII
+[HEADER]
+station_id       = snow_storage
+station_name     = Snow Storage Site
+latitude         = 59.398000
+longitude        = 24.602700
+altitude         = 33.2
+nodata           = -999
+tz               = 0
+slope_angle      = 0
+slope_azi        = 0
+history          = Run 2026-03-26T13:01:02Z, by siim@EI072N, with Snowpack-20260310.9ea114d3, compiled on Mar 10 2026, 09:35:02
+ProfileDate      = 2024-08-31T23:00:00
+HS_Last          = 2.435834
+SlopeAngle       = 0.00
+SlopeAzi         = 0.00
+nSoilLayerData   = 2
+nSnowLayerData   = 3
+SoilAlbedo       = 0.20
+BareSoil_z0      = 0.020
+CanopyHeight     = 0.000
+CanopyLeafAreaIndex = 0.000000
+CanopyDirectThroughfall = 1.00
+CanopySnowIntCapacity = -999.00
+CanopyAlbedoDry  = -999.00
+CanopyAlbedoWet  = -999.00
+CanopyAlbedoSnow = -999.00
+CanopyDiameter   = -999.00
+CanopyFracLAIUpperLayer = -999.00
+CanopyBasalArea  = -999.00
+SoilEmissivity   = 0.95
+ErosionLevel     = 2
+TimeCountDeltaHS = 0.000000
+fields           = timestamp Layer_Thick  T  Vol_Frac_I  Vol_Frac_W  Vol_Frac_V  Vol_Frac_S Rho_S Conduc_S HeatCapac_S  rg  rb  dd  sp  mk mass_hoar ne CDot metamo
+[DATA]
+2024-04-01T00:00:00     1.000000   274.266720     0.000000     0.050900     0.458100     0.491000    1300.0     1.500       1538.0    0.000000   0.000000   0.000000   0.000000      9      0.000000    1        0.000000        0.000000
+2024-04-01T00:00:00     0.300000   273.150000     0.000000     0.013200     0.118800     0.868000    2300.0     1.700        880.0    0.000000   0.000000   0.000000   0.000000      9      0.000000    1        0.000000        0.000000
+2024-04-01T00:00:00     0.965149   273.150000     0.556335     0.034295     0.409370     0.000000       0.0     0.000          0.0    0.770190   0.472559   0.000000   1.000000     12      0.000000    1        0.000000        0.000000
+2024-04-01T00:00:00     1.251792   273.150000     0.405038     0.040943     0.554019     0.000000       0.0     0.000          0.0    0.716678   0.401699   0.000000   1.000000     12      0.000000    1        0.000000        0.000000
+2024-04-01T00:00:00     0.218892   284.545717     0.000000     0.102624     0.697376     0.200000     563.2     0.120       1500.0   15.000000   2.500000   0.200000   0.450000     13      0.000000    1        0.000000        0.000000

@@ -14,7 +14,7 @@ Results are validated against historical digitized volume data from Nordell & Su
 
 ## Features
 
-* **3-layer RC snow model**: Tracks temperature and liquid water content per layer, integrated with a 4th-order Runge-Kutta (RK4) scheme at a 10-minute time step.
+* **3-layer RC snow model**: Tracks temperature and liquid water content per layer, integrated with a 4th-order Runge-Kutta scheme at a 10-minute time step.
 * **Full Surface Energy Balance (SEB)**: Cover surface temperature is solved dynamically at every time step using a bisection method balancing shortwave, longwave, sensible, latent, rain, and conduction fluxes.
 * **Advanced insulation model**: Effective conductivity and solar absorptivity evolve with woodchip moisture content, material age, and porosity compaction.
 * **Boone Overburden Densification**: Dynamic tracking of layer thickness and ice fraction as the snowpack compacts under its own weight.

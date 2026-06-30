@@ -95,12 +95,12 @@ The model adapts to several common column aliases:
 
 | Column Alias | Description | Unit |
 | --- | --- | --- |
-| `Time` / `Date_refYear` | Timestamp | string |
-| `Temp_C` / `Ta_C` | Air temperature | °C |
-| `Air_Vel_m/s_10m` / `U_ms` | Wind speed at 10 m height | m/s |
-| `Prec_m/h` / `Pr_mm_day` | Precipitation rate | m/h or mm/day |
-| `Glo_Sol_Ir_W/m2` / `G_W_m2` | Global solar irradiance | W/m² |
-| `RH_%` / `RH_pct` | Relative humidity | % |
+| `Time` | Timestamp | string |
+| `Temp_C` | Air temperature | °C |
+| `Air_Vel_m/s_10m` | Wind speed at 10 m height | m/s |
+| `Prec_m/h` | Precipitation rate | m/h |
+| `Glo_Sol_Ir_W/m2` | Global solar irradiance | W/m² |
+| `RH_%` | Relative humidity | % |
 | `Soil_Temp_C` | Soil temperature | °C |
 
 ---

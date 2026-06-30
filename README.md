@@ -108,7 +108,3 @@ The model adapts to several common column aliases:
 ## License
 
 [MIT](LICENSE.md)
-
-```
-
-```

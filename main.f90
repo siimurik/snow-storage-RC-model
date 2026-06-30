@@ -1,5 +1,5 @@
 ! =============================================================================
-!  snowsim_v5.f90  -  Snow Storage RC Thermal Model
+!  main.f90  -  Snow Storage RC Thermal Model
 !
 !  Authors : Siim Erik Pugal, siim.pugal@taltech.ee                            
 !            Hossein Alimohammadi,  hossein.alimohammadi@taltech.ee            
@@ -7,14 +7,13 @@
 !  License : MIT                                                               
 !
 !  Compilation (gfortran):
-!    gfortran -O3 -fopenmp snowsim_v5.f90 -o snowsim_v5
+!    gfortran -O3 -fopenmp main.f90 -o main
 !
 !  On Windows:
-!    gfortran -g -fbacktrace -fcheck=all -Wall -Wextra snowsim_v5.f90 \
-!        -o snowsim_v5.exe
+!    gfortran -g -fbacktrace -fcheck=all -Wall -Wextra main.f90 -o main.exe
 ! =============================================================================
 
-program snowsim_v5
+program main
     use iso_fortran_env, only: real64, int32
     use ieee_arithmetic, only: ieee_value, ieee_quiet_nan, ieee_is_nan
     implicit none
@@ -1277,4 +1276,4 @@ end subroutine load_primary_forcing
         end if
     end subroutine linspace
 
-end program snowsim_v5
+end program main

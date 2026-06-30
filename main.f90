@@ -7,7 +7,7 @@
 !  License : MIT                                                               
 !
 !  Compilation (gfortran):
-!    gfortran -O3 -fopenmp main.f90 -o main
+!    gfortran main.f90 -o main
 !
 !  On Windows:
 !    gfortran -g -fbacktrace -fcheck=all -Wall -Wextra main.f90 -o main.exe

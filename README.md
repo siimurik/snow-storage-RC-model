@@ -29,8 +29,8 @@ Results are validated against historical digitized volume data from Nordell & Su
 
 | File | Description |
 |---|---|
-| `main.py` | Python implementation (`snowsim_v8`) utilizing `numba` for JIT-compiled physics kernels and `matplotlib` for generating diagnostic plots. |
-| `main.f90` | [cite_start]Fortran implementation (`snowsim_v5`) utilizing `iso_fortran_env` for fast, compiled execution of the thermal network[cite: 1, 7]. |
+| `main.py` | Python implementation utilizing `numba` for JIT-compiled physics kernels and `matplotlib` for generating diagnostic plots. |
+| `main.f90` | [cite_start]Fortran implementation utilizing `iso_fortran_env` for fast, compiled execution of the thermal network[cite: 1, 7]. |
 | `validat.py` | Validation script that runs the model against digitized snow volume data from Nordell & Sundin (1998) for various insulation thicknesses. |
 
 ---

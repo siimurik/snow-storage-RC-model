@@ -63,7 +63,7 @@
 #  USAGE                                                                       #
 #    Place the input CSV in the working directory (see load_primary_forcing    #
 #    for the expected file path), then run:                                    #
-#       python3 snowsim_v8.py                                                  #
+#       python3 main.py                                                        #
 #                                                                              #
 ################################################################################
 

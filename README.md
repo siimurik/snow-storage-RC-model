@@ -20,7 +20,7 @@ Results are validated against historical digitized volume data from Nordell & Su
 * **Boone Overburden Densification**: Dynamic tracking of layer thickness and ice fraction as the snowpack compacts under its own weight.
 * **Refreezing & Percolation**: Cold-content refreezing approach following Bartelt & Lehning (2002), and bucket-method drainage with an irreducible water content threshold.
 * **Ground Robin BC**: Soil temperature read directly from CSV; handles combined conduction and interface resistance at the snow-ground boundary via a concrete pad.
-* **Dual Implementations**: Available as a high-performance Numba JIT-compiled Python script and a fast OpenMP-enabled Fortran program.
+* **Dual Implementations**: Available as a high-performance Numba JIT-compiled Python script and a Fortran program.
 * **Comprehensive Diagnostics**: Python version outputs 12 detailed diagnostic figures automatically saved to the `figures/` directory, including a layered cross-section energy flow diagram.
 
 ---

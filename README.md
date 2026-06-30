@@ -99,7 +99,7 @@ The model adapts to several common column aliases:
 | `Temp_C` | Air temperature | °C |
 | `Air_Vel_m/s_10m` | Wind speed at 10 m height | m/s |
 | `Prec_m/h` | Precipitation rate | m/h |
-| `Glo_Sol_Ir_W/m2` | Global solar irradiance | W/m² |
+| `Glo_Sol_Ir_W/m2` | Global solar irradiance | W/m$^2$ |
 | `RH_%` | Relative humidity | % |
 | `Soil_Temp_C` | Soil temperature | °C |
 

@@ -4,6 +4,14 @@ A physics-based thermal model for seasonal snow storage piles, implemented in Py
 
 ---
 
+## Citation
+
+If you use this model or code in your research, please cite the paper:
+
+> Pugal, S. E., Alimohammadi, H., Sukumaran, S., & Volkova, A. (2026). RC thermal model for evaluating heat transfer mechanisms in a seasonal snow storage unit. *Applied Thermal Engineering*, 132566. https://doi.org/10.1016/j.applthermaleng.2026.132566
+
+---
+
 ## Overview
 
 Seasonal snow storage is a technique for retaining winter snowfall to provide cooling during summer. A covering of woodchip insulation dramatically reduces melt losses. The code models this system using a 3-layer RC (resistance-capacitance) thermal network, where each snow layer has its own temperature, liquid water content and density that evolve in response to atmospheric and ground boundary conditions.

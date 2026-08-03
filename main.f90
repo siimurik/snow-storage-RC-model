@@ -1029,12 +1029,12 @@ end subroutine load_primary_forcing
         real(real64), intent(in)  :: eps_c, CH, CV, CE, f_shelter, beta_w
         real(real64), intent(out) :: qLW, qH, qE, qRAIN, qins
 
-        real(real64) :: e_a_Pa, e_a_kPa, eps_sky, e_c_Pa, q_a, q_star
+        real(real64) :: e_a_Pa, e_a_hPa, eps_sky, e_c_Pa, q_a, q_star
         real(real64) :: E0, E, L
 
         e_a_Pa  = RH * e_sat_scalar(Ta)
-        e_a_kPa = e_a_Pa / 1000.0d0
-        eps_sky = min(max(1.24d0 * (e_a_kPa / Ta)**(1.0d0/7.0d0), 0.6d0), &
+        e_a_hPa = e_a_Pa / 100.0d0
+        eps_sky = min(max(1.24d0 * (e_a_hPa / Ta)**(1.0d0/7.0d0), 0.6d0), &
                      1.0d0)
 
         qLW = eps_sky * SIGMA * Ta**4 - eps_c * SIGMA * Tc**4
@@ -1155,15 +1155,15 @@ end subroutine load_primary_forcing
         real(real64), intent(in)     :: rA
         real(real64), intent(out)    :: Tc, qLW, qH, qE, qRAIN_out, qins
 
-        real(real64) :: e_a_Pa, e_a_kPa, eps_sky, eps_sky_Ta4, qH_coeff
+        real(real64) :: e_a_Pa, e_a_hPa, eps_sky, eps_sky_Ta4, qH_coeff
         real(real64) :: q_a, CE_U_shelter, qRAIN
         real(real64) :: Tc_min, Tc_max, lo, hi, Flo, Fhi, new_lo, new_hi
         integer      :: ntry, idx_min(1)
         real(real64), dimension(25)  :: Tc_grid, Fg
 
         e_a_Pa      = RH * e_sat_scalar(Ta)
-        e_a_kPa     = e_a_Pa / 1000.0d0
-        eps_sky     = min(max(1.24d0 * (e_a_kPa / Ta)**(1.0d0/7.0d0), &
+        e_a_hPa     = e_a_Pa / 100.0d0
+        eps_sky     = min(max(1.24d0 * (e_a_hPa / Ta)**(1.0d0/7.0d0), &
                              0.6d0), 1.0d0)
         eps_sky_Ta4 = eps_sky * SIGMA * Ta**4
         qH_coeff = RHO_AIR * CP_AIR * p%CH * (1.0d0 + p%CV) * U
@@ -1177,7 +1177,7 @@ end subroutine load_primary_forcing
         end if
 
         Tc_min = TFREEZE + p%solve%Tc_min_C
-        Tc_max = min(TFREEZE + p%solve%Tc_max_C, Ta + 2.0d0)
+        Tc_max = TFREEZE + p%solve%Tc_max_C
         lo = max(Ta - p%solve%bracket_dT_lo, Tc_min)
         hi = min(Ta + p%solve%bracket_dT_hi, Tc_max)
 

@@ -246,8 +246,8 @@ def cover_fluxes_full_jit(Tc, Ta, U, RH, Pr, Ts1, Rins, f,
     Returns (qLW, qH, qE, qRAIN, qins).
     """
     e_a_Pa  = RH * e_sat_scalar(Ta)
-    e_a_kPa = e_a_Pa / 1000.0
-    eps_sky  = min(max(1.24 * (e_a_kPa / Ta)**(1.0/7.0), 0.6), 1.0)
+    e_a_hPa = e_a_Pa / 100.0
+    eps_sky  = min(max(1.24 * (e_a_hPa / Ta)**(1.0/7.0), 0.6), 1.0)
     qLW      = eps_sky * SIGMA * Ta**4 - eps_c * SIGMA * Tc**4
 
     qH = RHO_AIR * CP_AIR * CH * (1.0 + CV) * U * (Ta - Tc)
@@ -336,8 +336,8 @@ def solve_cover_temperature(Ta, U, RH, Pr, Ts1, Rins, f, qSW_cov, p, rA=1.0):
     """
     # --- Precompute Ta-side quantities (constant during bisection) ---
     e_a_Pa      = RH * e_sat_scalar(Ta)
-    e_a_kPa     = e_a_Pa / 1000.0
-    eps_sky     = min(max(1.24 * (e_a_kPa / Ta)**(1.0/7.0), 0.6), 1.0)
+    e_a_hPa     = e_a_Pa / 100.0
+    eps_sky     = min(max(1.24 * (e_a_hPa / Ta)**(1.0/7.0), 0.6), 1.0)
     eps_sky_Ta4 = eps_sky * SIGMA * Ta**4
 
     qH_coeff    = RHO_AIR * CP_AIR * p.CH * (1.0 + p.CV) * U   # * (Ta - Tc)
@@ -350,7 +350,7 @@ def solve_cover_temperature(Ta, U, RH, Pr, Ts1, Rins, f, qSW_cov, p, rA=1.0):
 
     # --- Bracket search ---
     Tc_min = TFREEZE + p.solve.Tc_min_C
-    Tc_max = min(TFREEZE + p.solve.Tc_max_C, Ta + 2.0)
+    Tc_max = TFREEZE + p.solve.Tc_max_C
 
     lo = max(Ta - p.solve.bracket_dT_lo, Tc_min)
     hi = min(Ta + p.solve.bracket_dT_hi, Tc_max)

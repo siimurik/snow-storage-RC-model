@@ -417,8 +417,8 @@ def cover_fluxes(Tc, Ta, U, RH, Train, Pr, Ts1, Rins, f, qSW, p):
     """
     # Long-wave: sky emission minus cover emission
     e_a_Pa  = RH * e_sat_scalar(Ta)
-    e_a_kPa = e_a_Pa / 1000.0
-    eps_sky  = min(max(1.24 * (e_a_kPa / Ta) ** (1.0 / 7.0), 0.6), 1.0)
+    e_a_hPa = e_a_Pa / 100.0
+    eps_sky  = min(max(1.24 * (e_a_hPa / Ta) ** (1.0 / 7.0), 0.6), 1.0)
     qLW      = eps_sky * SIGMA * Ta**4 - p.eps_c * SIGMA * Tc**4
 
     # Sensible heat (bulk aerodynamic)
@@ -507,7 +507,7 @@ def solve_cover_temperature(Ta, U, RH, Train, Pr, Ts1, Rins, f, qSW, p, rA):
     Tc : float  Cover temperature [K].
     """
     Tc_min = TFREEZE + p.solve.Tc_min_C
-    Tc_max = min(TFREEZE + p.solve.Tc_max_C, Ta + 2.0 + 0.02 * max(0.0, 0.0))
+    Tc_max = TFREEZE + p.solve.Tc_max_C
 
     fun = lambda Tc: cover_seb_residual(Tc, Ta, U, RH, Train, Pr, Ts1, Rins, f, qSW, p, rA)
 
@@ -693,11 +693,22 @@ def load_primary_forcing(data_file):
     #  Default model tuning parameters (p0)
     # -----------------------------------------------------------------
     p0 = SimpleNamespace(
-        CH=1.8e-3, CE=1.0e-3, eps_c=0.95, f_shelter=0.4,
-        Hi=0.6, k_dry=0.15, k_sat=0.30, n_k=1.5,
-        W_sat=30.0, W_field=10.0, KD=5e-6, beta_w=3.0,
-        alb_dry=0.65, alb_wet=0.50, tau_dry=0.25, tau_wet=0.10,
-        CV=2.0, a_snow=0.55, U10=1.0,
+        CH         = 0.002855,
+        CE         = 0.001408,
+        f_shelter  = 0.1622,
+        beta_w     = 4.714,
+        eps_c      = 0.8318,
+        a_snow     = 0.4387,
+        tau_dry    = 0.111,
+        tau_wet    = 0.03651,
+        k_dry      = 0.2596,
+        k_sat      = 0.2697,
+        n_k        = 1.896,
+        CV         = 0.6043,
+        Hi=0.6, 
+        W_sat=30.0, W_field=10.0, KD=5e-6, 
+        alb_dry=0.65, alb_wet=0.50,
+        U10=1.0,
         # ======== Advanced insulation aging & porosity ========
         # Conductivity aging
         delta_k_age = 0.5,        # conductivity increase per year of age (relative)
@@ -1306,14 +1317,14 @@ def configure_case(which_case, base, p0):
         # thermal mass.
         base.snow.Cs  = base.snow.rho * base.snow.c * base.snow.dz
 
-        p0.k_dry    = 0.25;   p0.k_sat    = 0.40
-        p0.tau_dry  = 0.20;   p0.tau_wet  = 0.09
-        p0.n_k      = 0.5;    p0.CV       = 2.0
-        p0.CE       = 1.0e-3; p0.f_shelter = 0.4
-        p0.eps_c    = 0.95;   p0.CH       = 1.8e-3
-        p0.beta_w   = 3.0
+        p0.k_dry    = 0.2596482158;   p0.k_sat    = 0.2696602322
+        p0.tau_dry  = 0.1109989073;   p0.tau_wet  = 0.03650875679
+        p0.n_k      = 1.89630393;     p0.CV       = 0.6042931863
+        p0.CE       = 0.001407639551; p0.f_shelter = 0.162172101
+        p0.eps_c    = 0.8317670781;   p0.CH       = 0.002855113604
+        p0.beta_w   = 4.713703342;    p0.a_snow   = 0.4387427801
 
-        p0_CH_noIns   = 2.8e-3
+        p0_CH_noIns   = 0.0027
         p0_beta_noIns = 0.0
 
     elif which_case.lower() == "skogsberg2005":
@@ -1419,7 +1430,7 @@ def main():
     # ------------------------------------------------------------------
     #  1. Load primary forcing and build default parameters
     # ------------------------------------------------------------------
-    DATA_FILE = "DATA_2024_40cm.csv"
+    DATA_FILE = "../DATA_2024_40cm.csv"
 
     try:
         forc, base, p0 = load_primary_forcing(DATA_FILE)

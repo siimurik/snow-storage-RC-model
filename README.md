@@ -95,7 +95,9 @@ pip install numpy matplotlib numba pandas scipy
 
 ## Input Data
 
-The model reads hourly meteorological data from a CSV file. The default forcing file is currently named `DATA_2024_40cm.csv`.
+The model requires hourly meteorological forcing data. The filtered input dataset for 2024 is provided in `DATA_2024_40cm.csv`.
+
+* **Source**: Meteorological data provided by the [Estonian Environment Agency](https://www.ilmateenistus.ee/kliima/ajaloolised-ilmaandmed/) (*Keskkonnaagentuur*).
 
 ### Required Columns
 
